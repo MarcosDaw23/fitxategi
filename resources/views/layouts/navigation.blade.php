@@ -15,16 +15,20 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         Dashboard
                     </x-nav-link>
-                    
+
+
                     <x-nav-link :href="route('attendance.history')" :active="request()->routeIs('attendance.*')">
                         Mi Historial
                     </x-nav-link>
-                    
+
                     @if(Auth::user()->isTeacher() || Auth::user()->isAdmin())
+                        <x-nav-link :href="route('admin.userPanel')" :active="request()->routeIs('admin.userPanel')">
+                            User Panel
+                        </x-nav-link>
                         <x-nav-link :href="route('attendance.all')" :active="request()->routeIs('attendance.all')">
                             Todas las Asistencias
                         </x-nav-link>
-                        
+
                         <x-nav-link :href="route('reports.index')" :active="request()->routeIs('reports.*')">
                             Reportes
                         </x-nav-link>
@@ -84,16 +88,19 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 Dashboard
             </x-responsive-nav-link>
-            
+
             <x-responsive-nav-link :href="route('attendance.history')" :active="request()->routeIs('attendance.*')">
                 Mi Historial
             </x-responsive-nav-link>
-            
+
             @if(Auth::user()->isTeacher() || Auth::user()->isAdmin())
+                <x-responsive-nav-link :href="route('admin.userPanel')" :active="request()->routeIs('admin.userPanel')">
+                            User Panel
+                </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('attendance.all')" :active="request()->routeIs('attendance.all')">
                     Todas las Asistencias
                 </x-responsive-nav-link>
-                
+
                 <x-responsive-nav-link :href="route('reports.index')" :active="request()->routeIs('reports.*')">
                     Reportes
                 </x-responsive-nav-link>
